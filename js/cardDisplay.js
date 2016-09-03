@@ -1,0 +1,16 @@
+'use strict';
+
+//Browserify required modules
+const $ = require('jquery');
+
+
+//////////////////////////////////////////////////////
+//Function that displays a select number of cards
+
+let displayCardSet = (num) => {
+
+  
+
+};
+
+//////////////////////////////////////////////////////
