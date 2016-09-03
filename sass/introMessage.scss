@@ -1,0 +1,39 @@
+/***************************************************/
+/* Intro message div styling */
+
+#intro-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  margin: 5rem;
+  font-size: 70px;
+  font-family: 'VT323', monospace;
+  color: white;
+}
+
+.intro-items {
+  margin: 3rem
+}
+/***************************************************/
+
+
+/***************************************************/
+/* Start Button for intro classes */
+
+.start-btn {
+  background-image: linear-gradient(to bottom, green, lightgreen);
+  border-radius: 100%;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.start-btn:hover {
+  background-image: linear-gradient(to bottom, lightgreen, green);
+  cursor: pointer;
+  box-shadow: 2px 4px black;
+}
+/***************************************************/
