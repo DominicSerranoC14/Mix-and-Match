@@ -24,5 +24,7 @@ $(document).ready( function() {
   createProgressBar($outputDiv);
   startProgressBar(getElById('progress-bar'), getElById('progress-label'));
 
+
+
 });
 ///////////////////////////////////////////////////

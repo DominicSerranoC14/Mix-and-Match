@@ -30,7 +30,7 @@ const $outputDiv = getElById('output-div');
       const $tutDiv = tutMessageDiv($outputDiv);
 
       //Insert the level one tut info in tut-div
-      tutMessage($tutDiv, tutLevelOne.title, tutLevelOne.message);
+      tutMessage($tutDiv, tutLevelOne);
 
     });
   };

@@ -7,16 +7,18 @@ const $ = require('jquery');
 //////////////////////////////////////////////////////
 //
 
+let cardList = [];
+
+//List of all card img's available
 module.exports = {
 
-  //List of all card img's available
-  let cardList = [
+  cardList: [
 
     { img: 'img/css3-logo.png' },
     { img: 'img/html-logo.png' },
     { img: 'img/js-logo.png' }
 
-  ];//End cardList
+  ]//End cardList
 
 };//End exports
 

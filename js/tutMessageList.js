@@ -8,7 +8,8 @@ module.exports = {
   //Message to display at the start of the game
   tutLevelOne: {
     title: 'How to Play',
-    message: "Try to remember where the cards shown to you are placed, because you only have 3 seconds until they are hidden! After that it is up to you to remember where they were. Choose 3 pairs correctly and you win. However, choose incorrectly 2 times, and you're done!"
+    paragraph: "Try to remember where the cards shown to you are placed, because you only have 3 seconds until they are hidden! After that it is up to you to remember where they were. Choose 3 pairs correctly and you win. However, choose incorrectly 2 times, and you're done!",
+    btnText: 'Begin'
   }
 
 };//End exports
