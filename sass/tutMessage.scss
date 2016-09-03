@@ -1,0 +1,22 @@
+$game-font: 'VT323', monospace;
+
+
+/***************************************************/
+/**  Style for the tutorial info message  **/
+
+#tut-message {
+  width: 400px;
+  height: 300px;
+
+  margin: auto;
+  padding: 1rem;
+
+  background: grey;
+  border: double 1rem black;
+  text-align: center;
+  font-family: $game-font;
+  font-size: 20px;
+  color: white;
+};
+
+/***************************************************/

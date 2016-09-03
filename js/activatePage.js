@@ -2,6 +2,8 @@
 
 //Browserify required modules
 const $ = require('jquery');
+const { tutMessageDiv, tutMessage } = require('./tutMessage');
+const { tutLevelOne } = require('./tutMessageList');
 
 
 //Variables
@@ -23,6 +25,12 @@ const $outputDiv = getElById('output-div');
 
       //Clear outputDiv
       $outputDiv.html('');
+
+      //Display tut message div and store
+      const $tutDiv = tutMessageDiv($outputDiv);
+
+      //Insert the level one tut info in tut-div
+      tutMessage($tutDiv, tutLevelOne.title, tutLevelOne.message);
 
     });
   };
