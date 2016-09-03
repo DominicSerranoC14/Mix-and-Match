@@ -1,0 +1,47 @@
+{
+  "name": "sketch-pad",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^3.1.0",
+    "gulp-sass": "^2.3.2",
+    "jquery": "^2.2.1",
+    "materialize-css": "^0.97.6"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.0",
+    "gulp-jslint": "^0.2.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.5",
+    "jshint": "^2.9.1",
+    "jshint-stylish": "^2.1.0",
+    "lodash.assign": "^4.0.4",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "browserify-shim": "^3.8.0",
+    "watchify": "^3.7.0"
+  },
+  "browser": {
+    "materialize": "./node_modules/materialize-css/bin/materialize.js"
+  },
+  "browserify-shim": {
+    "materialize": {
+      "exports": "materialize"
+    }
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  }
+}

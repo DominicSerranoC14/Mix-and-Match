@@ -1,0 +1,33 @@
+/**  Imports  **/
+@import 'introMessage.scss';
+@import 'jqueryClasses.scss';
+@import 'cardDisplay.scss';
+@import 'progressBar.scss';
+
+
+/***************************************************/
+/* Base styles */
+
+body {
+  background: black;
+}
+
+/***************************************************/
+
+
+/***************************************************/
+/* Base styles for output div for all content */
+#output-div {
+  width: 80%;
+  height: 80vh;
+  margin: auto;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  z-index: 100;
+  background-image: linear-gradient(to bottom, rgba(80,80,80,1), rgba(20,20,20,.1));
+  border: solid 1rem white;
+}
+/***************************************************/
