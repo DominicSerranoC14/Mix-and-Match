@@ -2,7 +2,7 @@
 
 //Browserify required modules
 const $ = require('jquery');
-const { shuffleSet } = require('./shuffle');
+const { shuffleSet, displaySet } = require('./shuffle');
 
 //Variables
 const makeEl = (tag) => $(document.createElement(tag));
@@ -24,7 +24,7 @@ let displayCardSet = (levelObj) => {
   //Append the elements to the outputDiv
   $outputDiv.append($h1);
 
-  shuffleSet(6);
+  displaySet(6);
 
 };
 //////////////////////////////////////////////////////

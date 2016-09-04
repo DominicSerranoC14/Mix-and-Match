@@ -16,7 +16,12 @@ module.exports = {
 
     { img: 'img/css3-logo.png' },
     { img: 'img/html-logo.png' },
-    { img: 'img/js-logo.png' }
+    { img: 'img/js-logo.png' },
+    { img: 'img/angular-logo.png' },
+    { img: 'img/bower-logo.png' },
+    { img: 'img/gulp-logo.png' },
+    { img: 'img/npm-logo.png' },
+    { img: 'img/npm-logo.png' },
 
   ]//End cardList
 
