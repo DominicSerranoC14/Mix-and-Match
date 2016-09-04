@@ -24,7 +24,8 @@ let displayCardSet = (levelObj) => {
   //Append the elements to the outputDiv
   $outputDiv.append($h1);
 
-  displaySet(6);
+  //Shuffle deck, return a set, and display cards
+  displaySet(levelObj.cardNum);
 
 };
 //////////////////////////////////////////////////////

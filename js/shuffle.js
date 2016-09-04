@@ -7,7 +7,7 @@ const { cardList } = require('./cardList.js');
 
 ///////////////////////////////////////////////////
 //This function will sort the card deck in a random order
-module.exports.shuffleSet = () => {
+let shuffleSet = () => {
 
   cardList.forEach( (each) => {
     //Assign each card object a random 'order' value
@@ -33,24 +33,43 @@ module.exports.shuffleSet = () => {
 
 
 ///////////////////////////////////////////////////
+//Function that selects a random set of cards based on user level
+let collectSetForLevel = (cardNum) => {
+
+  //Store the shuffledSet
+  const fullCardSet = shuffleSet();
+
+  //Determine whether to return odd or even card selectedSet
+  let determineSet = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
+
+  //Filter through the shuffled deck
+  let selectedSet = fullCardSet.filter( (cardObj, i) => {
+
+
+    //Return every card with an odd or even index value &&
+    //Return only the 'cardNum' amount needed per level
+    //ie: level 1 should return 3 cards
+    //This is determined by the 'determineSet' var
+    if (i % 2 === determineSet && i < cardNum * 2)  {
+      return cardList[i];
+    }
+
+  });
+
+  return selectedSet;
+
+};//end collectSetForLevel()
+///////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////
 //Function will display a selected set of cards
 module.exports.displaySet = (cardNum) => {
 
-  //Store the shuffledSet
-  const fullCardSet = module.exports.shuffleSet();
+  //Store the sorted card set
+  let currentCardSet = collectSetForLevel(cardNum);
 
-  //Determine the number of card pairs the requested level needs
-  let requiredSetNum = cardNum / 2;
-
-  //Randomly generate 1 or 2 to determine if cards will be selected
-  //by odd or even position
-  let selectedSet = Math.floor(Math.random() * (2) + 1);
-
-
-  console.log("Test cardNum", cardNum);
-  console.log("Test requiredSetNum", requiredSetNum);
-  console.log("Test selectedset", selectedSet);
-  console.log("Test ", fullCardSet);
+  console.log("Test currentCardSet", currentCardSet);
 
 };//End shuffle()
 ///////////////////////////////////////////////////
