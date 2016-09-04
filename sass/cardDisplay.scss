@@ -1,5 +1,23 @@
+/**  Variables  **/
+$game-font: 'VT323', monospace;
+
+
+/***************************************************/
+/**  Base styles for the game page  **/
+.card-level-title {
+  position: relative;
+  left: 50vh;
+  bottom: 35vh;
+
+  color: white;
+  font-family: $game-font;
+}
+/***************************************************/
+
+
 /***************************************************/
 /* Base styles for game mode when 6 cards are showing */
+
 .cardDiv6 {
   width: 200px;
   height: 200px;

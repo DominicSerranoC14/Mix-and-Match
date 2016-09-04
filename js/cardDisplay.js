@@ -2,7 +2,7 @@
 
 //Browserify required modules
 const $ = require('jquery');
-const { cardList } = require('./cardList.js');
+const { shuffleSet } = require('./shuffle');
 
 //Variables
 const makeEl = (tag) => $(document.createElement(tag));
@@ -14,18 +14,19 @@ const $outputDiv = getElById('output-div');
 
 //////////////////////////////////////////////////////
 //Function that displays a select number of cards
-
 let displayCardSet = (levelObj) => {
 
   //Create a level title
-  const $h3 = makeEl('h3');
-  $h3.text(levelObj.levelTitle);
+  const $h1 = makeEl('h1');
+  $h1.addClass('card-level-title');
+  $h1.text(levelObj.levelTitle);
 
   //Append the elements to the outputDiv
-  $outputDiv.append($h3);
+  $outputDiv.append($h1);
+
+  shuffleSet(6);
 
 };
-
 //////////////////////////////////////////////////////
 
 

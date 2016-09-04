@@ -5,6 +5,8 @@
 @import 'progressBar.scss';
 @import 'tutMessage.scss';
 
+$game-font: 'VT323', monospace;
+
 
 /***************************************************/
 /* Base styles */
@@ -28,7 +30,7 @@ body {
   flex-wrap: wrap;
   align-items: center;
   z-index: 100;
-  background-image: linear-gradient(to bottom, rgba(80,80,80,1), rgba(20,20,20,.1));
+  background-image: linear-gradient(to bottom, rgba(120,120,120,1), rgba(80,80,80,.2));
   border: solid 1rem white;
 }
 /***************************************************/
