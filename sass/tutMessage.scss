@@ -1,0 +1,46 @@
+$game-font: 'VT323', monospace;
+
+
+/***************************************************/
+/**  Style for the tutorial info message  **/
+
+#tut-message {
+  width: 400px;
+  height: 300px;
+
+  margin: auto;
+  padding: 1rem;
+
+  background: grey;
+  border: double 1rem black;
+  text-align: center;
+  font-family: $game-font;
+  font-size: 20px;
+  color: white;
+};
+/***************************************************/
+
+
+/***************************************************/
+/**  Styles for the tut info buttons  **/
+#tut-message button {
+  font-size: 20px;
+  margin: .5rem;
+  border: dotted 2px black;
+  box-shadow: 2px 2px 2px black;
+};
+
+#tut-message button:hover {
+  color: white;
+  box-shadow: 4px 4px 4px black;
+};
+
+#exit-btn {
+  background: red;
+};
+
+#action-btn {
+  background: green;
+};
+
+/***************************************************/

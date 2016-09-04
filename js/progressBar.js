@@ -37,7 +37,7 @@ const startProgressBar = function(el, label) {
   let width = 10;
 
   //Set interval for the progress-bar
-  let id = setInterval(frame, 100);
+  let id = setInterval(frame, 5);
 
   //Function that increments the progress-bar
   function frame() {

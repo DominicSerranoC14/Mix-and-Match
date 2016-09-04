@@ -15,6 +15,7 @@ const $introMessage = buildMessage();
 ///////////////////////////////////////////////////
 
 
+///////////////////////////////////////////////////
 //On page load build out the intro message
 $(document).ready( function() {
 
@@ -23,4 +24,7 @@ $(document).ready( function() {
   createProgressBar($outputDiv);
   startProgressBar(getElById('progress-bar'), getElById('progress-label'));
 
+
+
 });
+///////////////////////////////////////////////////
