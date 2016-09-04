@@ -5,7 +5,7 @@ const $ = require('jquery');
 const { tutMessageDiv, tutMessage } = require('./tutMessage');
 const { tutLevelOne } = require('./tutMessageList');
 const { buildMessage } = require('./buildIntroMessage.js');
-const activatePage = require('./activatePage');
+const { displayCardSet } = require('./cardDisplay');
 
 //Variables
 const getElByClass = (className) => $(document.getElementsByClassName(className));
@@ -18,22 +18,22 @@ const $outputDiv = getElById('output-div');
 //Activate event listener for the start button
 //This funciton accepts an element id as an arg
 //so it can activate dynamically made elements
-module.exports.activateStartBtn = (el) => {
+module.exports.activateStartButton = (el) => {
 
-    let $startBtn = getElById(el);
-    $startBtn.click(() => {
+  let $startBtn = getElById(el);
+  $startBtn.click(() => {
 
-      //Clear outputDiv
-      $outputDiv.html('');
+    //Clear outputDiv
+    $outputDiv.html('');
 
-      //Display tut message div and store
-      const $tutDiv = tutMessageDiv($outputDiv);
+    //Display tut message div and store
+    const $tutDiv = tutMessageDiv($outputDiv);
 
-      //Insert the level one tut info in tut-div
-      tutMessage($tutDiv, tutLevelOne);
+    //Insert the level one tut info in tut-div
+    tutMessage($tutDiv, tutLevelOne);
 
-    });
-  };
+  });
+};
 /////////////////////////////////////////////////////////////
 
 
@@ -41,20 +41,39 @@ module.exports.activateStartBtn = (el) => {
 //Function that activates the exit button when tut window is created
 module.exports.activateTutExitButton = (el) => {
 
-    const $exitButton = getElById(el);
-    $exitButton.click( () => {
+  const $exitButton = getElById(el);
+  $exitButton.click( () => {
 
-      //Clear outputDiv
-      $outputDiv.html('');
+    //Clear outputDiv
+    $outputDiv.html('');
 
-      //Append the introMessage to the outputDiv
-      $outputDiv.append(buildMessage());
+    //Append the introMessage to the outputDiv
+    $outputDiv.append(buildMessage());
 
-      //Activate event listener for start button
-      activatePage.activateStartBtn('start-game-btn');
+    //Activate event listener for start button
+    module.exports.activateStartButton('start-game-btn');
 
-    });
+  });
 
-  };
+};
+/////////////////////////////////////////////////////////////
 
+/////////////////////////////////////////////////////////////
+//Activate the 'begin' button for Level 1
+module.exports.activateTutBeginButton = (el) => {
+
+  const $beginButton = getElById(el);
+  $beginButton.click( () => {
+
+    //Clear outputDiv
+    $outputDiv.html('');
+
+    //Append the level title to the outputDiv
+    displayCardSet(tutLevelOne);
+
+    //Activate event listener for start button
+
+  });
+
+};
 /////////////////////////////////////////////////////////////
