@@ -2,7 +2,8 @@
 
 //Browserify required modules
 const $ = require('jquery');
-const { shuffleSet, displaySet } = require('./shuffle');
+const { shuffleSet, collectSetForLevel } = require('./shuffle');
+
 
 //Variables
 const makeEl = (tag) => $(document.createElement(tag));
@@ -14,7 +15,7 @@ const $outputDiv = getElById('output-div');
 
 //////////////////////////////////////////////////////
 //Function that displays a select number of cards
-let displayCardSet = (levelObj) => {
+let displayCardSet = (levelObj, deck) => {
 
   //Create a level title
   const $h1 = makeEl('h1');
@@ -24,8 +25,11 @@ let displayCardSet = (levelObj) => {
   //Append the elements to the outputDiv
   $outputDiv.append($h1);
 
-  //Shuffle deck, return a set, and display cards
-  displaySet(levelObj.cardNum);
+  //Shuffle entire cardList collection
+  const shuffledDeck = shuffleSet(deck);
+
+  //Store the required amount of card objs for user level
+  return collectSetForLevel(shuffledDeck, levelObj.cardNum);
 
 };
 //////////////////////////////////////////////////////

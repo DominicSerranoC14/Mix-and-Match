@@ -6,6 +6,8 @@ const { tutMessageDiv, tutMessage } = require('./tutMessage');
 const { tutLevelOne } = require('./tutMessageList');
 const { buildMessage } = require('./buildIntroMessage.js');
 const { displayCardSet } = require('./cardDisplay');
+const { cardList } = require('./cardList.js');
+
 
 //Variables
 const getElByClass = (className) => $(document.getElementsByClassName(className));
@@ -68,8 +70,10 @@ module.exports.activateTutBeginButton = (el) => {
     //Clear outputDiv
     $outputDiv.html('');
 
-    //Append the level title to the outputDiv
-    displayCardSet(tutLevelOne);
+    //Append the level info and cards to outputDiv
+    const currentCardSet = displayCardSet(tutLevelOne, cardList);
+
+    console.log("Test currenCardSet", currentCardSet);
 
     //Activate event listener for start button
 
