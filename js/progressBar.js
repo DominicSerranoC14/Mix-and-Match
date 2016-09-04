@@ -48,7 +48,7 @@ const startProgressBar = function(el, label) {
         $outputDiv.html('');
 
         //Append the introMessage to the outputDiv
-        $outputDiv.append($introMessage);
+        $outputDiv.append(buildMessage());
 
         //Activate event listener for start button
         activateStartBtn('start-game-btn');

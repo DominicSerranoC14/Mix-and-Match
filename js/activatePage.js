@@ -4,7 +4,8 @@
 const $ = require('jquery');
 const { tutMessageDiv, tutMessage } = require('./tutMessage');
 const { tutLevelOne } = require('./tutMessageList');
-
+const { buildMessage } = require('./buildIntroMessage.js');
+const activatePage = require('./activatePage');
 
 //Variables
 const getElByClass = (className) => $(document.getElementsByClassName(className));
@@ -15,10 +16,9 @@ const $outputDiv = getElById('output-div');
 
 /////////////////////////////////////////////////////////////
 //Activate event listener for the start button
-
-  //This funciton accepts an element as an arg
-  //so it can activate dynamically made elements
-  const activateStartBtn = (el) => {
+//This funciton accepts an element id as an arg
+//so it can activate dynamically made elements
+module.exports.activateStartBtn = (el) => {
 
     let $startBtn = getElById(el);
     $startBtn.click(() => {
@@ -34,8 +34,27 @@ const $outputDiv = getElById('output-div');
 
     });
   };
-
 /////////////////////////////////////////////////////////////
 
 
-module.exports = { activateStartBtn };
+/////////////////////////////////////////////////////////////
+//Function that activates the exit button when tut window is created
+module.exports.activateTutExitButton = (el) => {
+
+    const $exitButton = getElById(el);
+    $exitButton.click( () => {
+
+      //Clear outputDiv
+      $outputDiv.html('');
+
+      //Append the introMessage to the outputDiv
+      $outputDiv.append(buildMessage());
+
+      //Activate event listener for start button
+      activatePage.activateStartBtn('start-game-btn');
+
+    });
+
+  };
+
+/////////////////////////////////////////////////////////////

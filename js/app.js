@@ -3,7 +3,7 @@
 //Browserify required modules
 const $ = require('jquery');
 const { buildMessage } = require('./buildIntroMessage.js');
-const { activateStartBtn } = require('./activatePage');
+const { activateStartBtn } = require('./activatePage.js');
 const { createProgressBar, startProgressBar } = require('./progressBar.js');
 
 
@@ -16,14 +16,13 @@ const $introMessage = buildMessage();
 
 
 ///////////////////////////////////////////////////
-//On page load build out the intro message
+//On page load build out the progress bar
 $(document).ready( function() {
 
   //Initiate Game start
   //Show and activate the progress bar
   createProgressBar($outputDiv);
   startProgressBar(getElById('progress-bar'), getElById('progress-label'));
-
 
 
 });
