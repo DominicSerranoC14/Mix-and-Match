@@ -11,7 +11,6 @@ const { createProgressBar, startProgressBar } = require('./progressBar.js');
 const getElById = (id) => $(document.getElementById(id));
 const getElByClass = (className) => $(document.getElementsByClassName(className));
 const $outputDiv = getElById('output-div');
-const $introMessage = buildMessage();
 ///////////////////////////////////////////////////
 
 

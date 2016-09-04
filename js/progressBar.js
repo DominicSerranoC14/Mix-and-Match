@@ -5,7 +5,7 @@ const $ = require('jquery');
 const makeEl = (tag) => $(document.createElement(tag));
 const getElById = (id) => $(document.getElementById(id));
 const $outputDiv = getElById('output-div');
-const { activateStartBtn } = require('./activatePage');
+const { activateStartButton } = require('./activatePage');
 const { buildMessage } = require('./buildIntroMessage.js');
 const $introMessage = buildMessage();
 ///////////////////////////////////////////////////
@@ -51,11 +51,13 @@ const startProgressBar = function(el, label) {
         $outputDiv.append(buildMessage());
 
         //Activate event listener for start button
-        activateStartBtn('start-game-btn');
+        activateStartButton('start-game-btn');
 
     } else {
       width++;
       el.width(`${width}%`);
+      //Display 100% on end, adjusted bar to
+      //expand only to 95%
       label.text(`Loading... ${width + 5}%`);
     }
   }

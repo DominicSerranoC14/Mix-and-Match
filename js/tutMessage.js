@@ -77,6 +77,9 @@ let tutMessage = (el, message) => {
   //Activate the exitButton
   activatePage.activateTutExitButton('exit-btn');
 
+  //Activate the beginButton
+  activatePage.activateTutBeginButton('action-btn');
+
 };//end tutMessageHelpIntro()
 
 ///////////////////////////////////////////////////
