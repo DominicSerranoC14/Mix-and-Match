@@ -16,7 +16,7 @@ const $introMessage = buildMessage();
 
 
 ///////////////////////////////////////////////////
-//On page load build out the intro message
+//On page load build out the progress bar
 $(document).ready( function() {
 
   //Initiate Game start

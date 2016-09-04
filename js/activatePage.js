@@ -15,9 +15,8 @@ const $outputDiv = getElById('output-div');
 
 /////////////////////////////////////////////////////////////
 //Activate event listener for the start button
-
-  //This funciton accepts an element as an arg
-  //so it can activate dynamically made elements
+//This funciton accepts an element id as an arg
+//so it can activate dynamically made elements
   const activateStartBtn = (el) => {
 
     let $startBtn = getElById(el);
@@ -34,8 +33,24 @@ const $outputDiv = getElById('output-div');
 
     });
   };
+/////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////
+//Function that activates the exit button when tut window is created
+  const activateTutExitButton = () => {
+
+    const $exitButton = getElById('exit-btn');
+    $exitButton.click( () => {
+
+      //Clear outputDiv
+      $outputDiv.html('');
+
+    });
+
+  };
 
 /////////////////////////////////////////////////////////////
 
 
-module.exports = { activateStartBtn };
+module.exports = { activateStartBtn, activateTutExitButton };
