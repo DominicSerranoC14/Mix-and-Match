@@ -2,9 +2,13 @@
 
 //Browserify required modules
 const $ = require('jquery');
+const activatePage = require('./activatePage');
 
 //Variables
 const makeEl = (tag) => $(document.createElement(tag));
+const getElByClass = (className) => $(document.getElementsByClassName(className));
+const getElById = (id) => $(document.getElementById(id));
+const $outputDiv = getElById('output-div');
 ///////////////////////////////////////////////////
 
 
@@ -69,6 +73,9 @@ let tutMessage = (el, message) => {
 
   //Set the exit button
   const $exitButton = el.children('#exit-btn');
+
+  //Activate the exitButton
+  activatePage.activateTutExitButton('exit-btn');
 
 };//end tutMessageHelpIntro()
 
