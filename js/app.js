@@ -6,7 +6,6 @@ const { buildMessage } = require('./buildIntroMessage.js');
 const { activateStartBtn } = require('./activatePage.js');
 const { createProgressBar, startProgressBar } = require('./progressBar.js');
 
-
 //Variables
 const getElById = (id) => $(document.getElementById(id));
 const getElByClass = (className) => $(document.getElementsByClassName(className));
@@ -22,7 +21,6 @@ $(document).ready( function() {
   //Show and activate the progress bar
   createProgressBar($outputDiv);
   startProgressBar(getElById('progress-bar'), getElById('progress-label'));
-
 
 });
 ///////////////////////////////////////////////////

@@ -5,7 +5,7 @@ const $ = require('jquery');
 const { tutMessageDiv, tutMessage } = require('./tutMessage');
 const { tutLevelOne } = require('./tutMessageList');
 const { buildMessage } = require('./buildIntroMessage.js');
-const { displayCardSet } = require('./cardDisplay');
+const { collectCardSet, buildDeck } = require('./cardDisplay');
 const { cardList } = require('./cardList.js');
 
 
@@ -71,9 +71,10 @@ module.exports.activateTutBeginButton = (el) => {
     $outputDiv.html('');
 
     //Append the level info and cards to outputDiv
-    const currentCardSet = displayCardSet(tutLevelOne, cardList);
+    const currentCardSet = collectCardSet(tutLevelOne, cardList);
 
-    console.log("Test currenCardSet", currentCardSet);
+    //Builds the obj's into elements to be displayed
+    buildDeck(currentCardSet);
 
     //Activate event listener for start button
 

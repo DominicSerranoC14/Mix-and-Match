@@ -14,16 +14,8 @@ const $outputDiv = getElById('output-div');
 
 
 //////////////////////////////////////////////////////
-//Function that displays a select number of cards
-let displayCardSet = (levelObj, deck) => {
-
-  //Create a level title
-  const $h1 = makeEl('h1');
-  $h1.addClass('card-level-title');
-  $h1.text(levelObj.levelTitle);
-
-  //Append the elements to the outputDiv
-  $outputDiv.append($h1);
+//Function that stores a shuffled, specified number of cards
+let collectCardSet = (levelObj, deck) => {
 
   //Shuffle entire cardList collection
   const shuffledDeck = shuffleSet(deck);
@@ -35,4 +27,41 @@ let displayCardSet = (levelObj, deck) => {
 //////////////////////////////////////////////////////
 
 
-module.exports = { displayCardSet };
+//////////////////////////////////////////////////////
+//Function that builds card elements outputDiv
+let buildDeck = (deck) => {
+
+  let deckArray = [];
+
+  //Takes in the shuffled deck array and duplicates each obj
+  deck.forEach( (cardObj) => {
+
+    let $div = makeEl('div');
+    $div.addClass('card-div-8');
+    $div.css('background-image', `url(${cardObj.img})`);
+
+    $outputDiv.append($div);
+
+  });
+
+};
+//////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////
+//Function that will display the deck of cards and level title
+let displayCardSet = (levelObj, deck) => {
+
+//Create a level title
+const $h1 = makeEl('h1');
+$h1.addClass('card-level-title');
+$h1.text(levelObj.levelTitle);
+
+//Append the elements to the outputDiv
+$outputDiv.append($h1);
+
+};//End of displayCardSet
+//////////////////////////////////////////////////////
+
+
+module.exports = { collectCardSet, buildDeck };
