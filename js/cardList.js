@@ -20,7 +20,7 @@ module.exports = {
     { img: 'img/angular-js.png' },
     { img: 'img/bower-logo.png' },
     { img: 'img/gulp-logo.png' },
-    { img: 'img/npm-logo.png' },
+    { img: 'img/nodejs-logo.png' },
     { img: 'img/sass-logo.png' },
 
   ]//End cardList
