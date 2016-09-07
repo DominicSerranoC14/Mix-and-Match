@@ -26,6 +26,8 @@ module.exports.activateCardPlay = (className) => {
 
       console.log("Test hello");
 
+      $(event.target).addClass('flip-face-down');
+
     });
 
   });
