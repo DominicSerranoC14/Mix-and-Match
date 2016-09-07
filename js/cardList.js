@@ -25,6 +25,7 @@ module.exports = {
     { img: 'img/mocha-logo.png', name: 'mocha' },
     { img: 'img/chai-logo.png', name: 'chai' },
     { img: 'img/pug-logo.png', name: 'pug' },
+    { img: 'img/firebase-logo.png', name: 'firebase' },
 
   ]//End cardList
 
