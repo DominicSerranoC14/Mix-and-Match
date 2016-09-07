@@ -75,17 +75,12 @@ let buildDeck = (deck) => {
 
 //////////////////////////////////////////////////////
 //Function that will display the deck of cards and level title
-let displayCardSet = (levelObj, deckArray) => {
+let displayCardSet = (cardSetArray) => {
 
-  //Create a level title
-  const $h1 = makeEl('h1');
-  $h1.addClass('card-level-title');
-  $h1.text(levelObj.levelTitle);
-
-  //Append the elements to the outputDiv
-  $outputDiv.append($h1);
-
-  console.log("Test deckArray", deckArray);
+  //Loop through the doubledCardSetArray and append each one to the outputDiv
+  cardSetArray.forEach(($el) => {
+    $outputDiv.append($el);
+  });
 
 };//End of displayCardSet
 //////////////////////////////////////////////////////

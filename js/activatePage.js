@@ -79,11 +79,15 @@ module.exports.activateTutBeginButton = (el) => {
     console.log("Test doubledSet", doubledSet);
 
     //Builds the obj's into elements to be displayed
-    let elementDeck = buildDeck(doubledSet);
-    elementDeck += buildDeck(currentCardSet);
+    let cardSetOne = buildDeck(doubledSet);
+    let cardSetTwo = buildDeck(currentCardSet);
 
-    //Appends the card elements to the page
-    displayCardSet(tutLevelOne, elementDeck);
+    //Displays the current level title and info
+    
+
+    //Appends the card elements to the page for each array
+    displayCardSet(cardSetOne);
+    displayCardSet(cardSetTwo);
 
     //Activate event listener for start button
 
