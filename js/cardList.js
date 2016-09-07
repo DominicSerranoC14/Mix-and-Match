@@ -22,6 +22,9 @@ module.exports = {
     { img: 'img/gulp-logo.png', name: 'gulp' },
     { img: 'img/nodejs-logo.png', name: 'nodejs' },
     { img: 'img/sass-logo.png', name: 'sass' },
+    { img: 'img/mocha-logo.png', name: 'mocha' },
+    { img: 'img/chai-logo.png', name: 'chai' },
+    { img: 'img/pug-logo.png', name: 'pug' },
 
   ]//End cardList
 
