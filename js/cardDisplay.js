@@ -4,7 +4,6 @@
 const $ = require('jquery');
 const { shuffleSet, collectSetForLevel } = require('./shuffle');
 
-
 //Variables
 const makeEl = (tag) => $(document.createElement(tag));
 const getElById = (id) => $(document.getElementById(id));
@@ -25,6 +24,28 @@ let collectCardSet = (levelObj, deck) => {
 
 };
 //////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////
+//Function that doubles the collectedCardSet for multiple cards
+let doubleCardSet = (deck, cardList) => {
+
+  let doubledSet = [];
+
+  //Loop through the cardList set and push any matches to an array
+  //This will duplicte the cards and make matches
+  deck.forEach((each) => {
+    cardList.forEach((obj) => {
+      if ( each.name === obj.name ) {
+        doubledSet.push(obj);
+      }
+    });
+  });
+
+  return doubledSet;
+
+};
+/////////////////////////////////////////
 
 
 //////////////////////////////////////////////////////
@@ -70,4 +91,4 @@ let displayCardSet = (levelObj, deckArray) => {
 //////////////////////////////////////////////////////
 
 
-module.exports = { collectCardSet, buildDeck, displayCardSet };
+module.exports = { collectCardSet, buildDeck, displayCardSet, doubleCardSet };

@@ -5,7 +5,7 @@ const $ = require('jquery');
 const { tutMessageDiv, tutMessage } = require('./tutMessage');
 const { tutLevelOne } = require('./tutMessageList');
 const { buildMessage } = require('./buildIntroMessage.js');
-const { collectCardSet, buildDeck, displayCardSet } = require('./cardDisplay');
+const { collectCardSet, buildDeck, displayCardSet, doubleCardSet } = require('./cardDisplay');
 const { cardList } = require('./cardList.js');
 
 
@@ -73,9 +73,14 @@ module.exports.activateTutBeginButton = (el) => {
     //Selects a certain amount of cards from the entire card listener
     //Based on user level
     const currentCardSet = collectCardSet(tutLevelOne, cardList);
+    console.log("Test currentCardSet", currentCardSet);
+
+    const doubledSet = doubleCardSet(currentCardSet, cardList);
+    console.log("Test doubledSet", doubledSet);
 
     //Builds the obj's into elements to be displayed
-    const elementDeck = buildDeck(currentCardSet);
+    let elementDeck = buildDeck(doubledSet);
+    elementDeck += buildDeck(currentCardSet);
 
     //Appends the card elements to the page
     displayCardSet(tutLevelOne, elementDeck);
