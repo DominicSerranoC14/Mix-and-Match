@@ -7,7 +7,7 @@ const { tutLevelOne } = require('./tutMessageList');
 const { buildMessage } = require('./buildIntroMessage.js');
 const { collectCardSet, buildDeck, displayCardSet, doubleCardSet } = require('./cardDisplay');
 const { cardList } = require('./cardList.js');
-
+const { displayLevelTitle } = require('./displayLevelEl');
 
 //Variables
 const getElByClass = (className) => $(document.getElementsByClassName(className));
@@ -73,17 +73,16 @@ module.exports.activateTutBeginButton = (el) => {
     //Selects a certain amount of cards from the entire card listener
     //Based on user level
     const currentCardSet = collectCardSet(tutLevelOne, cardList);
-    console.log("Test currentCardSet", currentCardSet);
 
+    //Duplicate the currentCardSet from the cardList
     const doubledSet = doubleCardSet(currentCardSet, cardList);
-    console.log("Test doubledSet", doubledSet);
 
     //Builds the obj's into elements to be displayed
     let cardSetOne = buildDeck(doubledSet);
     let cardSetTwo = buildDeck(currentCardSet);
 
     //Displays the current level title and info
-    
+    displayLevelTitle(tutLevelOne);
 
     //Appends the card elements to the page for each array
     displayCardSet(cardSetOne);
