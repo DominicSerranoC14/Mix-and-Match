@@ -9,6 +9,7 @@ const { collectCardSet, buildDeck, displayCardSet, doubleCardSet } = require('./
 const { cardList } = require('./cardList.js');
 const { displayLevelTitle } = require('./displayLevelEl');
 const { buildFinalDeck, shuffleFinalDeck } = require('./randomShuffle');
+const { activateCardPlay } = require('./activateCardPlay');
 
 //Variables
 const getElByClass = (className) => $(document.getElementsByClassName(className));
@@ -91,9 +92,11 @@ module.exports.activateTutBeginButton = (el) => {
     //Appends the card elements to the page for each array
     let deck = shuffleFinalDeck(finalDeck);
 
+    //Display all div prebuilt elements
     displayCardSet(deck);
 
     //Activate event listener for start button
+    activateCardPlay('card-div');
 
   });
 

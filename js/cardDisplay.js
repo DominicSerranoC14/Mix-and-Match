@@ -59,8 +59,11 @@ let buildDeck = (deck) => {
 
     //Create a div with a random card background-image
     let $div = makeEl('div');
-    $div.addClass('card-div-8');
+    $div.addClass('card-div');
     $div.css('background-image', `url(${cardObj.img})`);
+
+    //Add id to each element to compare each card for matches
+    $div.attr('id', `${cardObj.name}`);
 
     //Push to an array
     deckArray.push($div);
