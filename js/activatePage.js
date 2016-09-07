@@ -5,9 +5,11 @@ const $ = require('jquery');
 const { tutMessageDiv, tutMessage } = require('./tutMessage');
 const { tutLevelOne } = require('./tutMessageList');
 const { buildMessage } = require('./buildIntroMessage.js');
-const { displayCardSet } = require('./cardDisplay');
+const { collectCardSet, buildDeck, displayCardSet, doubleCardSet } = require('./cardDisplay');
 const { cardList } = require('./cardList.js');
-
+const { displayLevelTitle } = require('./displayLevelEl');
+const { buildFinalDeck, shuffleFinalDeck } = require('./randomShuffle');
+const { activateCardPlay } = require('./activateCardPlay');
 
 //Variables
 const getElByClass = (className) => $(document.getElementsByClassName(className));
@@ -70,12 +72,31 @@ module.exports.activateTutBeginButton = (el) => {
     //Clear outputDiv
     $outputDiv.html('');
 
-    //Append the level info and cards to outputDiv
-    const currentCardSet = displayCardSet(tutLevelOne, cardList);
+    //Selects a certain amount of cards from the entire card listener
+    //Based on user level
+    const currentCardSet = collectCardSet(tutLevelOne, cardList);
 
-    console.log("Test currenCardSet", currentCardSet);
+    //Duplicate the currentCardSet from the cardList
+    const doubledSet = doubleCardSet(currentCardSet, cardList);
+
+    //Builds the obj's into elements to be displayed
+    let cardSetOne = buildDeck(doubledSet);
+    let cardSetTwo = buildDeck(currentCardSet);
+
+    //Displays the current level title and info
+    displayLevelTitle(tutLevelOne);
+
+    //Join the two arrays and shuffle them randomly
+    let finalDeck = buildFinalDeck(cardSetOne, cardSetTwo);
+
+    //Appends the card elements to the page for each array
+    let deck = shuffleFinalDeck(finalDeck);
+
+    //Display all div prebuilt elements
+    displayCardSet(deck);
 
     //Activate event listener for start button
+    activateCardPlay('card-div');
 
   });
 

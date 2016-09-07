@@ -14,7 +14,6 @@ const $outputDiv = getElById('output-div');
 
 ///////////////////////////////////////////////////
 //Build tutorial message at the start of the Game
-
 let tutMessageDiv = (appendTo) => {
 
   //Create div for info message
@@ -49,14 +48,12 @@ let tutMessageDiv = (appendTo) => {
   return $el;
 
 };//end buildTutMessage()
-
 ///////////////////////////////////////////////////
 
 
 ///////////////////////////////////////////////////
 //Function that will recylce the info message
 //With custom text
-
 let tutMessage = (el, message) => {
 
   //Set the tut message title
@@ -81,7 +78,6 @@ let tutMessage = (el, message) => {
   activatePage.activateTutBeginButton('action-btn');
 
 };//end tutMessageHelpIntro()
-
 ///////////////////////////////////////////////////
 
 

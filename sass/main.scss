@@ -21,14 +21,15 @@ body {
 /***************************************************/
 /* Base styles for output div for all content */
 #output-div {
-  width: 80%;
-  height: 80vh;
+  width: 90%;
+  height: 90vh;
   margin: auto;
   margin-top: 4rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
+  // align-items: center;
+  justify-content: center;
   z-index: 100;
   background-image: linear-gradient(to bottom, rgba(120,120,120,1), rgba(80,80,80,.2));
   border: solid 1rem white;
