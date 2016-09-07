@@ -11,6 +11,7 @@ const $outputDiv = getElById('output-div');
 //Display Level title
 let displayLevelTitle = (levelObj) => {
 
+  //Create a div element for the level headers
   const $div = makeEl('div');
   $div.addClass('level-div');
 
@@ -24,12 +25,13 @@ let displayLevelTitle = (levelObj) => {
   for ( let i = 0; i < 3; i++ ) {
     let $p = makeEl('p');
     $p.addClass('heart-icon');
+    $p.attr('id', `${i}`);
     heartArray.push($p);
   }
 
   //Append the elements to the outputDiv
   heartArray.forEach((each) => $div.append(each));
-  $outputDiv.append($h1);
+  $div.append($h1);
   $outputDiv.append($div);
 
 };
