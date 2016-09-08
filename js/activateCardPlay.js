@@ -10,6 +10,15 @@ const $outputDiv = getElById('output-div');
 ///////////////////////////////////////////////////
 
 
+///////////////////////////////////////////////////
+//Function that activates the start of play animation
+let startGameAnimation = ($el) => {
+  $el.addClass('card-default-style');
+  $el.addClass('flipped');
+};
+///////////////////////////////////////////////////
+
+
 /////////////////////////////////////////
 //This function will activate each card that is displayed in the outputDiv
 module.exports.activateCardPlay = (className) => {
@@ -20,9 +29,14 @@ module.exports.activateCardPlay = (className) => {
   //Loop through each deck and activate event listeners
   liveDeck.each((i, each) => {
 
+    //Add the default game style animation here to black cards out after 4 seconds
+    startGameAnimation($(each));
+
     $(each).click((event) => {
+      let $div = $(event.target);
       //Adding the flipcard animation to the selected div
-      $(event.target).addClass('flip-card');
+      $div.removeClass('card-default-style');
+      $div.addClass('flip-card');
     });
 
   });
