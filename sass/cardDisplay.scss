@@ -44,3 +44,49 @@ $game-font: 'VT323', monospace;
   border-radius: 20px 5px 20px 5px;
 }
 /***************************************************/
+
+
+/***************************************************/
+/* CSS3 animations for card play listed here */
+
+/* Animation classes listed here */
+
+.flip-card {
+  animation: flipcard 2s 0s 1 ease-in;
+}
+
+.card-default-style {
+  animation: carddefaultstyle 2s 4s ease-in forwards;
+}
+
+.flipped {
+  background-color: rgb(0,0,0);
+}
+
+
+/* Keyframes listed here */
+
+//Animation that blacks cards out at start of game
+@keyframes carddefaultstyle {
+  0% {
+    // background: inherit;
+  }
+  100% {
+    background: rgb(0,0,0);
+    transform: rotateY(180deg);
+  }
+}
+
+//Animation that is added when card is flipped
+@keyframes flipcard {
+  0% {
+    background: rgb(0,0,0);
+    transform: rotateY(180deg);
+  }
+
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+/***************************************************/
