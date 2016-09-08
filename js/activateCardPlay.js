@@ -17,17 +17,12 @@ module.exports.activateCardPlay = (className) => {
   //Collect all cards currently on the outputDiv
   let liveDeck = getElByClass(className);
 
-  console.log("Test liveDeck", liveDeck);
-
   //Loop through each deck and activate event listeners
-  liveDeck.each( (i, each) => {
+  liveDeck.each((i, each) => {
 
-    $(each).click( (event) => {
-
-      console.log("Test hello");
-
-      $(event.target).addClass('flip-face-down');
-
+    $(each).click((event) => {
+      //Adding the flipcard animation to the selected div
+      $(event.target).addClass('flip-card');
     });
 
   });

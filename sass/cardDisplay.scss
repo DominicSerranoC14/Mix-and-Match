@@ -51,8 +51,8 @@ $game-font: 'VT323', monospace;
 
 /* Animation classes listed here */
 
-.flip-face-down {
-  animation: flipcard 5s 0s 1 forwards;
+.flip-card {
+  animation: flipcard 2s 0s 1 forwards;
 }
 
 
@@ -60,13 +60,11 @@ $game-font: 'VT323', monospace;
 
 @keyframes flipcard {
   0% {
-    margin-left: 100%;
-    width: 300%;
+    transform: rotateY(0deg);
   }
 
   100% {
-    margin-left: 0%;
-    width: 100%;
+    transform: rotateY(360deg);
   }
 }
 
