@@ -56,7 +56,7 @@ $game-font: 'VT323', monospace;
 }
 
 .card-default-style {
-  animation: carddefaultstyle 2s 4s ease-in forwards;
+  animation: carddefaultstyle 2s 3s ease-in forwards;
 }
 
 .flipped {
@@ -68,9 +68,7 @@ $game-font: 'VT323', monospace;
 
 //Animation that blacks cards out at start of game
 @keyframes carddefaultstyle {
-  0% {
-    // background: inherit;
-  }
+  0% { }
   100% {
     background: rgb(0,0,0);
     transform: rotateY(180deg);

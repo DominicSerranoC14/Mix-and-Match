@@ -2,6 +2,7 @@
 
 //Browserify required modules
 const $ = require('jquery');
+const { determinePair, determineMatch } = require('./matchCardPair.js');
 
 //Variables
 const getElByClass = (className) => $(document.getElementsByClassName(className));
@@ -37,6 +38,9 @@ module.exports.activateCardPlay = (className) => {
       //Adding the flipcard animation to the selected div
       $div.removeClass('card-default-style');
       $div.addClass('flip-card');
+
+      //Matching logic function
+      determinePair($div);
     });
 
   });
