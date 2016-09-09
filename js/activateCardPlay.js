@@ -2,8 +2,7 @@
 
 //Browserify required modules
 const $ = require('jquery');
-const { determinePair, determineMatch } = require('./matchCardPair.js');
-
+const { determinePair } = require('./matchCardPair');
 //Variables
 const getElByClass = (className) => $(document.getElementsByClassName(className));
 const getElById = (id) => $(document.getElementById(id));
@@ -22,7 +21,7 @@ let startGameAnimation = ($el) => {
 
 /////////////////////////////////////////
 //This function will activate each card that is displayed in the outputDiv
-module.exports.activateCardPlay = (className) => {
+let activateCardPlay = (className) => {
 
   //Collect all cards currently on the outputDiv
   let liveDeck = getElByClass(className);
@@ -33,6 +32,7 @@ module.exports.activateCardPlay = (className) => {
     //Add the default game style animation here to black cards out after 4 seconds
     startGameAnimation($(each));
 
+    //Activate evnt listeners for each card
     $(each).click((event) => {
       let $div = $(event.target);
       //Adding the flipcard animation to the selected div
@@ -47,3 +47,6 @@ module.exports.activateCardPlay = (className) => {
 
 };
 /////////////////////////////////////////
+
+
+module.exports = { activateCardPlay };

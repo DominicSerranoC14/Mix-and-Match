@@ -10,6 +10,7 @@ const { cardList } = require('./cardList.js');
 const { displayLevelTitle } = require('./displayLevelEl');
 const { buildFinalDeck, shuffleFinalDeck } = require('./randomShuffle');
 const { activateCardPlay } = require('./activateCardPlay');
+const { determinePair } = require('./matchCardPair');
 
 //Variables
 const getElByClass = (className) => $(document.getElementsByClassName(className));

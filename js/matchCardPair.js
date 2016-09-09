@@ -2,7 +2,8 @@
 
 //Browserify required modules
 const $ = require('jquery');
-const { matchArray } = require('./storage.js');
+let { matchArray } = require('./storage.js');
+const { successfulMatch } = require('./matchMessage');
 
 //Variables
 const getElByClass = (className) => $(document.getElementsByClassName(className));
@@ -16,11 +17,13 @@ let determineMatch = (array) => {
 
   //If a match show success
   const test = array[0][0].id === array[1][0].id ?
-    console.log("It's a match"):
+    successfulMatch(array):
     console.log("Sorry! No match");
 
-  //If not a match show fail and subtract life
+    //Reset matchArray after a match is made
+    matchArray = [];
 
+  //If not a match show fail and subtract life
 };
 ///////////////////////////////////////////////////
 
