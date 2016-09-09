@@ -1,19 +1,17 @@
 $game-font: 'VT323', monospace;
 
 
-/**  Base styles for the match message  **/
-
 .match-message-div {
-  width: 200px;
-  height: 200px;
   position: fixed;
-  right: 0;
-  top: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 100;
+  right: 90px;
+  top: 70px;
   font-family: $game-font;
+  font-size: 30px;
   color: white;
 }
-
-/**  Animation for hiding and showing the match-message-div  **/
 
 .match-div-show {
   animation: matchdivshow 3s 0s ease-in;

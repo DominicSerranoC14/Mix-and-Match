@@ -14,15 +14,15 @@ const $outputDiv = getElById('output-div');
 
 /////////////////////////////////////////
 //Build message for matches/misses
-// let buildMatchMessage = (message) => {
-//
-//   //Build matchMessage div
-//   const $div = makeEl('div');
-//   $div.text(message);
-//   $div.addClass('match-message-div');
-//   // $div.addClass('match-div-show');
-//   $outputDiv.append($div);
-// };
+let buildMatchMessage = (message) => {
+
+  //Build matchMessage div
+  const $div = makeEl('div');
+  $div.addClass('match-message-div');
+  $div.text(message);
+  $div.appendTo($outputDiv);
+  // $div.addClass('match-div-show');
+};
 /////////////////////////////////////////
 
 
@@ -32,7 +32,7 @@ const successfulMatch = (array) => {
   //Add one to matches and display message string
   matches++;
   let message = `Correctly matched ${matches}!`;
-  // buildMatchMessage(message);
+  buildMatchMessage(message);
 
   //Loop through each element and add success animation
   $(array).each((i, $each) => {
