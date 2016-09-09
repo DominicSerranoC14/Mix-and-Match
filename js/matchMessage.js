@@ -21,7 +21,7 @@ let buildMatchMessage = (message) => {
   $div.addClass('match-message-div');
   $div.text(message);
   $div.appendTo($outputDiv);
-  // $div.addClass('match-div-show');
+  $div.addClass('match-div-show');
 };
 /////////////////////////////////////////
 
@@ -31,7 +31,7 @@ let buildMatchMessage = (message) => {
 const successfulMatch = (array) => {
   //Add one to matches and display message string
   matches++;
-  let message = `Correctly matched ${matches}!`;
+  let message = `Correct matches made: ${matches}`;
   buildMatchMessage(message);
 
   //Loop through each element and add success animation
