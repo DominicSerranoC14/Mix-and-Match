@@ -9,13 +9,9 @@ $game-font: 'VT323', monospace;
   position: fixed;
   right: 0;
   top: 0;
-}
-
-.match-message-div p {
   font-family: $game-font;
   color: white;
 }
-
 
 /**  Animation for hiding and showing the match-message-div  **/
 
