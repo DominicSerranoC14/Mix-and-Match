@@ -17,6 +17,18 @@ Once three pairs have been chosen, the player will be able to unlock the next le
 
 
 
+### Technologies Used
+```
+1. HTML5 & CSS3
+2. jQuery
+3. SASS
+4. Browserify
+5. Firebase
+6. Gulp
+```
+
+
+
 #### How to Run Project
 ```
 To start the program portion:

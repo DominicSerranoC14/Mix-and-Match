@@ -11,8 +11,7 @@
   "dependencies": {
     "firebase": "^3.3.0",
     "gulp-sass": "^2.3.2",
-    "jquery": "^2.2.1",
-    "materialize-css": "^0.97.6"
+    "jquery": "^2.2.1"
   },
   "devDependencies": {
     "browserify": "^13.0.0",
@@ -31,17 +30,4 @@
     "browserify-shim": "^3.8.0",
     "watchify": "^3.7.0"
   },
-  "browser": {
-    "materialize": "./node_modules/materialize-css/bin/materialize.js"
-  },
-  "browserify-shim": {
-    "materialize": {
-      "exports": "materialize"
-    }
-  },
-  "browserify": {
-    "transform": [
-      "browserify-shim"
-    ]
-  }
 }
