@@ -40,10 +40,25 @@ const successfulMatch = (array) => {
     $each.animate({opacity: 1}, 2000, () => {
       $each.removeClass('flip-card');
       $each.addClass('match-success');
+      $('.match-message-div').fadeOut();
+      $('.match-message-div').remove();
     });
   });
 
 };//End successfulMatch()
 /////////////////////////////////////////
 
-module.exports = { successfulMatch };
+
+/////////////////////////////////////////
+//Function that displays a failed match message and flips cards over
+const failedMatch = (array) => {
+  //Add one count to the miss variable
+  ++misses;
+  let message = `Oops! That's not a match.`;
+  buildMatchMessage(message);
+
+};
+/////////////////////////////////////////
+
+
+module.exports = { successfulMatch, failedMatch };

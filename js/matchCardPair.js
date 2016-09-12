@@ -3,7 +3,7 @@
 //Browserify required modules
 const $ = require('jquery');
 let { matchArray } = require('./storage.js');
-const { successfulMatch } = require('./matchMessage');
+const { successfulMatch, failedMatch } = require('./matchMessage');
 
 //Variables
 const getElByClass = (className) => $(document.getElementsByClassName(className));
@@ -17,8 +17,7 @@ let determineMatch = (array) => {
 
   //If a match show success
   const test = array[0][0].id === array[1][0].id ?
-    successfulMatch(array):
-    console.log("Sorry! No match");
+    successfulMatch(array): failedMatch(array);
 
     //Reset matchArray after a match is made
     matchArray = [];
@@ -35,7 +34,7 @@ let determinePair = ($el) => {
   matchArray.push($el);
 
   //Ternary to determine if two elements have been pushed to the matchArray
-  let test = matchArray.length === 2 ? determineMatch(matchArray): console.log("One card");
+  let test = matchArray.length === 2 ? determineMatch(matchArray): false;
 
 };
 ///////////////////////////////////////////////////
