@@ -10,8 +10,11 @@ Once three pairs have been chosen, the player will be able to unlock the next le
 
 ### Game play
 
-**Description:** Level one game play with a successful match made 
+
+
+**Description:** Level one game play with a successful match made
 ![alt text](img/level-one-match.png 'Level One Game Play with one Successful Match')
+
 
 
 #### How to Run Project
