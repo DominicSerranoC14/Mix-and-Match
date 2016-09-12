@@ -6,6 +6,13 @@ This game is a simple card matching game where the player will be presented with
 Once three pairs have been chosen, the player will be able to unlock the next level with more pairs they must match correctly. If the first three levels are passed, the player wins!
 
 ---
+
+
+### Game play
+
+![alt text](img/level-one-match.png 'Level One Game Play with one Successful Match')
+
+
 #### How to Run Project
 ```
 To start the program portion:
