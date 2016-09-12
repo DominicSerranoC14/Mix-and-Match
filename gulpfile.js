@@ -108,12 +108,12 @@ gulp.task('sass', function() {
  */
 gulp.task('watch', function() {
   // Run the link task when any JavaScript file changes
-  gulp.watch(['./js/**/*.js'], ['lint']);
+  gulp.watch(['./js/**/*.js'], ['lint', 'browserify']);
   gulp.watch('./sass/**/*.scss', ['sass']);
 
   gutil.log(gutil.colors.bgGreen('Watching for changes...'));
 });
 
 // This task runs when you type `gulp` in the CLI
-gulp.task('default', ['lint', 'watch', 'sass'], bundle);
+gulp.task('default', ['lint', 'watch', 'sass', 'browserify'], bundle);
 ////////////////////////////////////////////////

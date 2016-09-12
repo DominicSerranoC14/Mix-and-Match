@@ -14,15 +14,15 @@ const $outputDiv = getElById('output-div');
 
 /////////////////////////////////////////
 //Build message for matches/misses
-// let buildMatchMessage = (message) => {
-//
-//   //Build matchMessage div
-//   const $div = makeEl('div');
-//   $div.text(message);
-//   $div.addClass('match-message-div');
-//   // $div.addClass('match-div-show');
-//   $outputDiv.append($div);
-// };
+let buildMatchMessage = (message) => {
+
+  //Build matchMessage div
+  const $div = makeEl('div');
+  $div.addClass('match-message-div');
+  $div.text(message);
+  $div.appendTo($outputDiv);
+  $div.addClass('match-div-show');
+};
 /////////////////////////////////////////
 
 
@@ -31,8 +31,8 @@ const $outputDiv = getElById('output-div');
 const successfulMatch = (array) => {
   //Add one to matches and display message string
   matches++;
-  let message = `Correctly matched ${matches}!`;
-  // buildMatchMessage(message);
+  let message = `Correct matches made: ${matches}`;
+  buildMatchMessage(message);
 
   //Loop through each element and add success animation
   $(array).each((i, $each) => {
@@ -40,10 +40,25 @@ const successfulMatch = (array) => {
     $each.animate({opacity: 1}, 2000, () => {
       $each.removeClass('flip-card');
       $each.addClass('match-success');
+      $('.match-message-div').fadeOut();
+      $('.match-message-div').remove();
     });
   });
 
 };//End successfulMatch()
 /////////////////////////////////////////
 
-module.exports = { successfulMatch };
+
+/////////////////////////////////////////
+//Function that displays a failed match message and flips cards over
+const failedMatch = (array) => {
+  //Add one count to the miss variable
+  ++misses;
+  let message = `Oops! That's not a match.`;
+  buildMatchMessage(message);
+
+};
+/////////////////////////////////////////
+
+
+module.exports = { successfulMatch, failedMatch };
