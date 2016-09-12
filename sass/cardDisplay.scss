@@ -32,7 +32,7 @@ $game-font: 'VT323', monospace;
 
 
 /***************************************************/
-/* Base styles for game mode when 6 cards are showing */
+/* Base styles for game mode when cards are showing */
 
 .card-div {
   width: 150px;
@@ -53,15 +53,24 @@ $game-font: 'VT323', monospace;
 /* Animation classes listed here */
 
 .flip-card {
-  animation: flipcard 2s 0s 1 ease-in;
+  animation: flipcard 1s 0s 1 ease-in;
+}
+
+//Flips failed match cards back over
+.flip-over {
+  animation: flipover 1s 0s 1 ease-in forwards;
 }
 
 .card-default-style {
-  animation: carddefaultstyle 2s 3s ease-in forwards;
+  animation: carddefaultstyle 2s 2s ease-in forwards;
 }
 
 .match-success {
   animation: matchsuccess 1s 1s 1 ease-in;
+}
+
+.match-fail {
+  animation: matchfail 1s 1s 1 ease-in;
 }
 
 
@@ -88,6 +97,17 @@ $game-font: 'VT323', monospace;
   }
 }
 
+@keyframes flipover {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    background: rgb(0,0,0);
+    transform: rotateY(180deg);
+  }
+}
+
 //Animation when player successfully matches a pair
 @keyframes matchsuccess {
   0% {
@@ -104,6 +124,24 @@ $game-font: 'VT323', monospace;
   }
   100% {
     border: solid 2px rgba(0,255,0,.2);
+  }
+}
+
+@keyframes matchfail {
+  0% {
+    border: solid 2px rgba(255,0,0,.3);
+  }
+  25% {
+    border: solid 2px rgba(255,0,0,.7);
+  }
+  50% {
+    border: solid 2px rgba(255,0,0,.3);
+  }
+  75% {
+    border: solid 2px rgba(255,0,0,.7);
+  }
+  100% {
+    border: solid 2px rgba(255,0,0,.3);
   }
 }
 
